@@ -69,18 +69,18 @@
           
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <mat-icon>note_add</mat-icon>
               <p>
-                Layout Options
+                Catalogos
                 <i class="fas fa-angle-left right"></i>
                 <!-- <span class="badge badge-info right">6</span> -->
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Navbar</p>
+                <a routerLink="/Productos" routerLinkActive class="nav-link">
+                  <mat-icon>inventory</mat-icon>
+                  <p >Productos</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -104,3 +104,4 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+  <router-outlet></router-outlet> 
