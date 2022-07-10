@@ -63,10 +63,7 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">          
           <li class="nav-item">
             <a href="#" class="nav-link">
               <mat-icon>note_add</mat-icon>
@@ -84,21 +81,21 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Footer</p>
+                <a routerLink="/Categorias" routerLinkActive class="nav-link">
+                  <mat-icon>category</mat-icon>
+                  <p>Categorias</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Collapsed Sidebar</p>
+                <a routerLink="/#" routerLinkActive class="nav-link">
+                  <mat-icon>inventory</mat-icon>
+                  <p>Inventario</p>
                 </a>
               </li>
             </ul>
           </li>
-          
         </ul>
+        
       </nav>
       <!-- /.sidebar-menu -->
     </div>

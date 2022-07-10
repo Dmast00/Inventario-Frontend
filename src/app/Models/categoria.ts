@@ -1,5 +1,5 @@
 export interface Categoria {
-    IdCategoria : number,
-    C_Nombre : string,
-    C_Descripcion : string
+    idCategoria : number,
+    c_Nombre : string,
+    c_Descripcion : string
 }
