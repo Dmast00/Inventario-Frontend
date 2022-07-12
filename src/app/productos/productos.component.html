@@ -44,7 +44,7 @@
                
         </div>
         <div class="emaillistcontainer">
-          <mat-card (keyup.enter)="addProducto()" [formGroup]="form">
+          <mat-card class="mat-elevation-z8" (keyup.enter)="addProducto()" [formGroup]="form">
             <mat-form-field appearance="outline">
               <mat-label>Nombre</mat-label>
               <input #nombre matInput formControlName="p_Nombre">
