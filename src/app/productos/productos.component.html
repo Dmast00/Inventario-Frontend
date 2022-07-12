@@ -45,29 +45,29 @@
         </div>
         <div class="emaillistcontainer">
           <mat-card (keyup.enter)="addProducto()" [formGroup]="form">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
               <mat-label>Nombre</mat-label>
               <input #nombre matInput formControlName="p_Nombre">
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
               <mat-label>Categoria</mat-label>
               <mat-select formControlName="FK_IdCategoria">
                 <mat-option *ngFor="let item of Categorias" [value]="item.idCategoria" >{{item.c_Nombre}}</mat-option>
               </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
               <mat-label>Descripcion</mat-label>
               <textarea matInput formControlName="p_Descripcion"></textarea>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
               <mat-label >Precio</mat-label>
               <input matInput formControlName="p_Precio">
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
               <mat-label>Cantidad por unidad</mat-label>
               <input matInput formControlName="p_CantidadPorUnicad">
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
               <mat-label>Codigo de barras</mat-label>
               <input matInput formControlName="p_Codigo">
             </mat-form-field>

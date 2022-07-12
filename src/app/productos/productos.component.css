@@ -6,7 +6,7 @@
 }
 .emaillistcontainer{
     width: 30vw;
-    height: 59vh;
+    height: 58vh;
     margin-left: 1%;
     display: flex;
     flex-direction: row;
@@ -17,6 +17,7 @@ mat-card{
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
+    top: 3vh;
 }
 mat-form-field{
     width: 100%;
