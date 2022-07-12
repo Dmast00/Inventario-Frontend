@@ -11,6 +11,12 @@ import { MatTableModule } from "@angular/material/table";
 import { CategoryNameComponent } from './Pipes/category-name/category-name.component';
 import { MatButtonModule } from "@angular/material/button";
 import { CategoriasComponent } from './categorias/categorias.component';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatSelectModule } from "@angular/material/select";
+import { MatInputModule } from "@angular/material/input";
+import { MatCard, MatCardModule } from "@angular/material/card";
+import { ReactiveFormsModule } from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -26,7 +32,12 @@ import { CategoriasComponent } from './categorias/categorias.component';
     MatIconModule,
     HttpClientModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatCardModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

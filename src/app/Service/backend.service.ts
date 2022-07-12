@@ -18,4 +18,9 @@ export class BackendService {
     return this.http.get<Categoria[]>(this.apiURL+'Categorias')
   }
 
+
+  AddProducto(form :any){
+    console.log('Backend:' ,form)
+    return this.http.post(this.apiURL+'Productos',form)
+  }
 }

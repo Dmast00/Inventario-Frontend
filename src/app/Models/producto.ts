@@ -3,6 +3,6 @@ export interface Producto {
     P_Nombre : string,
     FK_IdCategoria : number,
     P_Descripcion : string,
-    P_Precio : number,
+    P_Precio : any,
     P_CantidadPorUnidad : string
 }

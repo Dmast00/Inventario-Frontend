@@ -1,4 +1,5 @@
-import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, ElementRef, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { Categoria } from '../Models/categoria';
@@ -12,6 +13,7 @@ import { BackendService } from '../Service/backend.service';
 })
 
 export class ProductosComponent implements OnInit {
+  @ViewChild('nombre') nombreRef: ElementRef;
 
   
 
@@ -19,7 +21,19 @@ export class ProductosComponent implements OnInit {
   Categorias : Categoria[] = []
   dataSource : any = new MatTableDataSource([])
   displayedColumns : string[]= ['p_Nombre','p_CantidadPorUnidad','fK_IdCategoria','p_Descripcion','p_Precio','p_Codigo']
-  constructor(private service : BackendService) { }
+  form : FormGroup;
+
+
+  constructor(private service : BackendService) { 
+    this.form = new FormGroup({
+      p_Nombre : new FormControl(),
+      FK_IdCategoria : new FormControl(),
+      p_Descripcion : new FormControl(),
+      p_Precio : new FormControl(),
+      p_CantidadPorUnicad : new FormControl(),
+      p_Codigo : new FormControl()
+    })
+  }
   
 
 
@@ -28,6 +42,9 @@ export class ProductosComponent implements OnInit {
     this.getCategorias()
   }
 
+  get f(){
+    return this.form.controls
+  }
 
   getProductos(){
     this.service.GetProductos().subscribe(data =>{
@@ -41,5 +58,12 @@ export class ProductosComponent implements OnInit {
     })
   }
 
+  addProducto(){
+    this.service.AddProducto(this.form.value).subscribe(data =>{
+      this.getProductos();
+    })
+    this.form.reset()
+    this.nombreRef.nativeElement.focus();
+  }
   
 }
