@@ -1,8 +1,8 @@
 export interface Producto {
-    IdProducto : number,
-    P_Nombre : string,
-    FK_IdCategoria : number,
-    P_Descripcion : string,
-    P_Precio : any,
-    P_CantidadPorUnidad : string
+    idProducto : number,
+    p_Nombre : string,
+    fK_IdCategoria : number,
+    p_Precio : number,
+    p_Descripcion : string,
+    p_CantidadPorUnidad : string
 }

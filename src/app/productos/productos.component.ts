@@ -30,7 +30,7 @@ export class ProductosComponent implements OnInit {
       FK_IdCategoria : new FormControl(),
       p_Descripcion : new FormControl(),
       p_Precio : new FormControl(),
-      p_CantidadPorUnicad : new FormControl(),
+      p_CantidadPorUnidad : new FormControl(),
       p_Codigo : new FormControl()
     })
   }
