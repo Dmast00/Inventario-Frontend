@@ -18,7 +18,10 @@ mat-card{
     flex-direction: row;
     flex-wrap:wrap;
     top: 3vh;
+    justify-content: flex-end;
 }
+
+
 mat-form-field{
     width: 100%;
 }
@@ -32,4 +35,9 @@ table{
 .containerform{
     display: flex;
     margin: 0px;
+}
+button{
+    background-color: var(--btn-color);
+    height: 5vh;
+
 }
