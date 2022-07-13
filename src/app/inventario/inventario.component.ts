@@ -18,13 +18,14 @@ export class InventarioComponent implements OnInit {
       productos : new FormControl(),
       descripcion : new FormControl(),
       cantidad : new FormControl(),
-
     })
   }
 
   ngOnInit(): void {
-    this.getProductos()
+    this.getProductos();
+    this.getInventario();
   }
+
   get f(){
     return this.form.controls
   }
