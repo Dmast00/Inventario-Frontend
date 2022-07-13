@@ -1,0 +1,14 @@
+
+<div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="containerform"> 
+            <div class="formemailcontainer">
+                <div class="row">
+                    <p *ngFor="let item of Productos">{{item.idProducto | ProductName : Productos}}</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

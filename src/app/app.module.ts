@@ -16,14 +16,18 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
 import { MatCard, MatCardModule } from "@angular/material/card";
 import { ReactiveFormsModule } from "@angular/forms";
-
+import { InventarioComponent } from './inventario/inventario.component';
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { ProductsNameComponent } from "./Pipes/products-name/products-name.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductosComponent,
     CategoryNameComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    InventarioComponent,
+    ProductsNameComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     MatSelectModule,
     MatInputModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

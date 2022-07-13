@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable } from 'rxjs';
 import { Categoria } from '../Models/categoria';
 import { Producto } from '../Models/producto';
 import { BackendService } from '../Service/backend.service';
