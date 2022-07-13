@@ -7,17 +7,24 @@
                 <div class="row">
                   <mat-card>
                     <form>
-                      <mat-form-field appearance="outline">
+                      <mat-form-field class="productos" appearance="outline">
                         <mat-label>Productos</mat-label>
                         <mat-select>
                           <mat-option *ngFor="let item of Productos">{{item.idProducto | ProductName : Productos}}</mat-option>
                         </mat-select>
                       </mat-form-field>
-                      <mat-form-field appearance="outline">
+                      <mat-form-field class="descripcion" appearance="outline">
                         <mat-label>Descripcion</mat-label>
                         <input matInput >
                       </mat-form-field>
+                      <mat-form-field class="cantidad" appearance="outline">
+                        <mat-label>Cantidad</mat-label>
+                        <input matInput >
+                      </mat-form-field>
                     </form>
+                    <button class="btnadd" mat-stroked-button>
+                      Agregar 
+                    </button>
                   </mat-card>
                 </div>
             </div>
