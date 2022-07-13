@@ -28,6 +28,9 @@ export class CategoriasComponent implements OnInit {
   ngOnInit(): void {
     this.getCategorias();
   }
+  get f(){
+    return this.form.controls
+  }
 
   getCategorias(){
     this.service.GetCategorias().subscribe(data =>{

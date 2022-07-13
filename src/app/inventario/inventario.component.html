@@ -5,21 +5,21 @@
         <div class="containerform"> 
             <div class="formemailcontainer">
                 <div class="row">
-                  <mat-card>
-                    <form>
+                  <mat-card (keyup.enter)="addInventario()">
+                    <form [formGroup]="form">
                       <mat-form-field class="productos" appearance="outline">
                         <mat-label>Productos</mat-label>
-                        <mat-select>
-                          <mat-option *ngFor="let item of Productos">{{item.idProducto | ProductName : Productos}}</mat-option>
+                        <mat-select formControlName="productos">
+                          <mat-option  *ngFor="let item of Productos">{{item.idProducto | ProductName : Productos}}</mat-option>
                         </mat-select>
                       </mat-form-field>
                       <mat-form-field class="descripcion" appearance="outline">
-                        <mat-label>Descripcion</mat-label>
-                        <input matInput >
+                        <mat-label >Descripcion</mat-label>
+                        <input matInput formControlName="descripcion" >
                       </mat-form-field>
                       <mat-form-field class="cantidad" appearance="outline">
                         <mat-label>Cantidad</mat-label>
-                        <input matInput >
+                        <input matInput formControlName="cantidad">
                       </mat-form-field>
                     </form>
                     <button class="btnadd" mat-stroked-button>

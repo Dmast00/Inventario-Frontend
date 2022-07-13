@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Producto } from '../Models/producto';
 import { BackendService } from '../Service/backend.service';
 
@@ -8,11 +9,24 @@ import { BackendService } from '../Service/backend.service';
   styleUrls: ['./inventario.component.css']
 })
 export class InventarioComponent implements OnInit {
+  @ViewChild('agregar') AgregarRef : ElementRef;
+
   Productos : Producto[] = []
-  constructor(private service :BackendService) { }
+  form : FormGroup;
+  constructor(private service :BackendService) { 
+    this.form = new FormGroup({
+      productos : new FormControl(),
+      descripcion : new FormControl(),
+      cantidad : new FormControl(),
+
+    })
+  }
 
   ngOnInit(): void {
     this.getProductos()
+  }
+  get f(){
+    return this.form.controls
   }
 
 
@@ -24,5 +38,10 @@ export class InventarioComponent implements OnInit {
     this.service.GetProductos().subscribe(data =>{
       this.Productos = data
     })
+  }
+  
+  addInventario(){
+    console.log('Agregando inventario')
+    this.form.reset()  
   }
 }
