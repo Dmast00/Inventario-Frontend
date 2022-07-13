@@ -20,7 +20,7 @@ export class ProductosComponent implements OnInit {
   Produtos : Producto[] = []
   Categorias : Categoria[] = []
   dataSource : any = new MatTableDataSource([])
-  displayedColumns : string[]= ['p_Nombre','p_CantidadPorUnidad','fK_IdCategoria','p_Descripcion','p_Precio','p_Codigo']
+  displayedColumns : string[]= ['p_Nombre','p_CantidadPorUnidad','fK_IdCategoria','p_Descripcion','p_Precio','p_Codigo','p_CostoMayoreo']
   form : FormGroup;
 
 
@@ -31,7 +31,8 @@ export class ProductosComponent implements OnInit {
       p_Descripcion : new FormControl(),
       p_Precio : new FormControl(),
       p_CantidadPorUnidad : new FormControl(),
-      p_Codigo : new FormControl()
+      p_Codigo : new FormControl(),
+      p_CostoMayoreo : new FormControl(),
     })
   }
   

@@ -32,6 +32,11 @@
               <td mat-cell *matCellDef="let item">{{item.p_Precio | number:'2.2'}}</td>
             </ng-container>
   
+            <ng-container matColumnDef="p_CostoMayoreo">
+              <th mat-header-cell *matHeaderCellDef>Costo por mayoreo</th>
+              <td mat-cell *matCellDef="let item">{{item.p_CostoMayoreo | number:'2.2'}}</td>
+            </ng-container>
+
             <ng-container matColumnDef="p_Codigo">
               <th mat-header-cell *matHeaderCellDef>Codigo</th>
               <td mat-cell *matCellDef="let item">{{item.p_Codigo}}</td>
@@ -62,6 +67,10 @@
             <mat-form-field appearance="outline">
               <mat-label >Precio</mat-label>
               <input matInput type="number" formControlName="p_Precio">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Costo por Mayoreo</mat-label>
+              <input matInput type="number" formControlName="p_CostoMayoreo">
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Cantidad por unidad</mat-label>
