@@ -25,5 +25,8 @@ export class BackendService {
   AddCategoria(form : any){
     return this.http.post(this.apiURL+'Categorias',form)
   }
-
+  //Tiene que ser http PUt para poder validar si el producto ya se encuentra en la base de datos
+  AddInventario(form : any){
+    return this.http.post(this.apiURL+'Inventarios',form)
+  }
 }
