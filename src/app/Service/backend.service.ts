@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { Producto } from '../Models/producto';
 import { Observable } from 'rxjs/internal/Observable';
 import { Categoria } from '../Models/categoria';
+import { Inventario } from '../Models/inventario';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,9 @@ export class BackendService {
   GetCategorias() : Observable<Categoria[]>{
     return this.http.get<Categoria[]>(this.apiURL+'Categorias')
   }
+  GetInventario() : Observable<Inventario[]>{
+    return this.http.get<Inventario[]>(this.apiURL+'Inventarios')
+  }
 
 
   AddProducto(form :any){
@@ -27,6 +31,6 @@ export class BackendService {
   }
   //Tiene que ser http PUt para poder validar si el producto ya se encuentra en la base de datos
   AddInventario(form : any){
-    return this.http.post(this.apiURL+'Inventarios',form)
+    return this.http.put(this.apiURL+'Inventarios',form)
   }
 }

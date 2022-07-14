@@ -35,3 +35,6 @@ mat-form-field{
     height: 6vh;
     top: 1vh;
 }
+table{
+    width: 100%;
+}

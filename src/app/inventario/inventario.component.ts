@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 import { Producto } from '../Models/producto';
 import { BackendService } from '../Service/backend.service';
 
@@ -15,6 +16,9 @@ export class InventarioComponent implements OnInit {
   Productos : Producto[] = []
   form : FormGroup;
   producto : Producto
+
+  dataSource : any = new MatTableDataSource([])
+  displayedColumns : string[]= ['idInventario','fK_IdProducto','p_Existencia','p_InventarioMinimo']
 
   constructor(private service :BackendService) { 
     this.form = new FormGroup({
@@ -35,7 +39,10 @@ export class InventarioComponent implements OnInit {
 
 
   getInventario(){
-    console.log('getting inventario')
+    this.service.GetInventario().subscribe(data =>{
+      this.dataSource = new MatTableDataSource(data)
+      
+    })
   }
   
   getProductos(){
@@ -47,7 +54,7 @@ export class InventarioComponent implements OnInit {
   addInventario(){
     console.log(this.form.value)
     this.service.AddInventario(this.form.value).subscribe(data =>{
-      console.log('Adding inventory')
+      this.getInventario();
     })
     this.form.reset()  
     this.DescripcionRef.nativeElement.value = ''
