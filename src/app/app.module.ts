@@ -19,6 +19,8 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { InventarioComponent } from './inventario/inventario.component';
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { ProductsNameComponent } from "./Pipes/products-name/products-name.component";
+import { CostoporMayoreoComponent } from './Pipes/costopor-mayoreo/costopor-mayoreo.component';
+import { PrecioComponent } from './Pipes/precio/precio.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { ProductsNameComponent } from "./Pipes/products-name/products-name.compo
     CategoriasComponent,
     InventarioComponent,
     ProductsNameComponent,
+    CostoporMayoreoComponent,
+    PrecioComponent,
 
   ],
   imports: [
