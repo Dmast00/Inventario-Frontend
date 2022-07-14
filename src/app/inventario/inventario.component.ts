@@ -20,7 +20,7 @@ export class InventarioComponent implements OnInit {
   Inventario : Inventario[]
   InventarioMinimo : number | undefined
   dataSource : any = new MatTableDataSource([])
-  displayedColumns : string[]= ['idInventario','fK_IdProducto','p_CostoMayoreo','p_Precio','p_Existencia','p_InventarioMinimo']
+  displayedColumns : string[]= ['idInventario','fK_IdProducto','p_CostoMayoreo','p_Precio','p_Existencia','p_InventarioMinimo','fechaModificacion']
 
   constructor(private service :BackendService) { 
     this.form = new FormGroup({
