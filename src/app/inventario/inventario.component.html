@@ -23,7 +23,7 @@
                       </mat-form-field>
                       <mat-form-field class="cantidad" appearance="outline">
                         <mat-label>Inventario Minimo</mat-label>
-                        <input type="number" [value]="InventarioMinimo" matInput formControlName="p_InventarioMinimo" >
+                        <input type="number" [(ngModel)]="InventarioMinimo" matInput formControlName="p_InventarioMinimo" >
                       </mat-form-field>
                     </form>
                     <button class="btnadd" mat-stroked-button (click)="addInventario()">

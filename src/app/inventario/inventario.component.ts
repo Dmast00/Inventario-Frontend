@@ -18,8 +18,7 @@ export class InventarioComponent implements OnInit {
   form : FormGroup;
   producto : Producto
   Inventario : Inventario[]
-  InventarioMinimo : any
-
+  InventarioMinimo : number | undefined
   dataSource : any = new MatTableDataSource([])
   displayedColumns : string[]= ['idInventario','fK_IdProducto','p_CostoMayoreo','p_Precio','p_Existencia','p_InventarioMinimo']
 
@@ -55,22 +54,18 @@ export class InventarioComponent implements OnInit {
   }
   
   addInventario(){
-    console.log(this.form.value)
     this.service.AddInventario(this.form.value).subscribe(data =>{
       this.getInventario();
+      this.DescripcionRef.nativeElement.value = ''
+      this.form.reset()  
     })
-    this.form.reset()  
-    this.DescripcionRef.nativeElement.value = ''
   }
 
   getProducto(item : Producto){
     this.producto = item
   }
   getMontominimo(item : Producto){
-    console.log('Monto minimo',item)
-    console.log(this.Inventario)
     const inv = this.Inventario.find(x => x.fK_IdProducto == item.idProducto)
-    console.log(inv)
     this.InventarioMinimo = inv?.p_InventarioMinimo
   }
 }
