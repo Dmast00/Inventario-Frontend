@@ -20,6 +20,7 @@ import { InventarioComponent } from './inventario/inventario.component';
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { ProductsNameComponent } from "./Pipes/products-name/products-name.component";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { ProductsNameComponent } from "./Pipes/products-name/products-name.compo
     CategoryNameComponent,
     CategoriasComponent,
     InventarioComponent,
-    ProductsNameComponent
+    ProductsNameComponent,
+
   ],
   imports: [
     BrowserModule,

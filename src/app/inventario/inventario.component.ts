@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { Inventario } from '../Models/inventario';
 import { Producto } from '../Models/producto';
 import { BackendService } from '../Service/backend.service';
 
@@ -16,6 +17,8 @@ export class InventarioComponent implements OnInit {
   Productos : Producto[] = []
   form : FormGroup;
   producto : Producto
+  Inventario : Inventario[]
+  InventarioMinimo : any
 
   dataSource : any = new MatTableDataSource([])
   displayedColumns : string[]= ['idInventario','fK_IdProducto','p_Existencia','p_InventarioMinimo']
@@ -41,7 +44,7 @@ export class InventarioComponent implements OnInit {
   getInventario(){
     this.service.GetInventario().subscribe(data =>{
       this.dataSource = new MatTableDataSource(data)
-      
+      this.Inventario = data
     })
   }
   
@@ -62,5 +65,12 @@ export class InventarioComponent implements OnInit {
 
   getProducto(item : Producto){
     this.producto = item
+  }
+  getMontominimo(item : Producto){
+    console.log('Monto minimo',item)
+    console.log(this.Inventario)
+    const inv = this.Inventario.find(x => x.fK_IdProducto == item.idProducto)
+    console.log(inv)
+    this.InventarioMinimo = inv?.p_InventarioMinimo
   }
 }

@@ -10,7 +10,7 @@
                       <mat-form-field class="productos" appearance="outline">
                         <mat-label>Productos</mat-label>
                         <mat-select formControlName="fK_IdProducto" >
-                          <mat-option [value]="item.idProducto" *ngFor="let item of Productos" (click)="getProducto(item)" >{{item.idProducto | ProductName : Productos}}</mat-option>
+                          <mat-option [value]="item.idProducto" *ngFor="let item of Productos" (click)="getProducto(item)" (click)="getMontominimo(item)" >{{item.idProducto | ProductName : Productos}}</mat-option>
                         </mat-select>
                       </mat-form-field>
                       <mat-form-field class="descripcion" appearance="outline">
@@ -23,7 +23,7 @@
                       </mat-form-field>
                       <mat-form-field class="cantidad" appearance="outline">
                         <mat-label>Inventario Minimo</mat-label>
-                        <input type="number" matInput formControlName="p_InventarioMinimo">
+                        <input type="number" [value]="InventarioMinimo" matInput formControlName="p_InventarioMinimo" >
                       </mat-form-field>
                     </form>
                     <button class="btnadd" mat-stroked-button (click)="addInventario()">
