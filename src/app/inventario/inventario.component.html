@@ -9,20 +9,24 @@
                     <form [formGroup]="form">
                       <mat-form-field class="productos" appearance="outline">
                         <mat-label>Productos</mat-label>
-                        <mat-select formControlName="productos">
-                          <mat-option  *ngFor="let item of Productos">{{item.idProducto | ProductName : Productos}}</mat-option>
+                        <mat-select formControlName="fK_IdProducto" value>
+                          <mat-option [value]="item.p_Nombre" *ngFor="let item of Productos" (click)="getProducto(item)" >{{item.idProducto | ProductName : Productos}}</mat-option>
                         </mat-select>
                       </mat-form-field>
                       <mat-form-field class="descripcion" appearance="outline">
                         <mat-label >Descripcion</mat-label>
-                        <input matInput formControlName="descripcion" >
+                        <input #descripcion matInput readonly [value]="producto?.p_Descripcion">
                       </mat-form-field>
                       <mat-form-field class="cantidad" appearance="outline">
                         <mat-label>Cantidad</mat-label>
-                        <input matInput formControlName="cantidad">
+                        <input matInput formControlName="p_Existencia">
+                      </mat-form-field>
+                      <mat-form-field class="cantidad" appearance="outline">
+                        <mat-label>Inventario Minimo</mat-label>
+                        <input matInput formControlName="p_InventarioMinimo">
                       </mat-form-field>
                     </form>
-                    <button class="btnadd" mat-stroked-button>
+                    <button class="btnadd" mat-stroked-button (click)="addInventario()">
                       Agregar 
                     </button>
                   </mat-card>

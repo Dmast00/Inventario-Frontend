@@ -10,14 +10,15 @@ import { BackendService } from '../Service/backend.service';
 })
 export class InventarioComponent implements OnInit {
   @ViewChild('agregar') AgregarRef : ElementRef;
-
+  @ViewChild('descripcion') DescripcionRef : ElementRef;
   Productos : Producto[] = []
   form : FormGroup;
+  producto : Producto
   constructor(private service :BackendService) { 
     this.form = new FormGroup({
-      productos : new FormControl(),
-      descripcion : new FormControl(),
-      cantidad : new FormControl(),
+      fK_IdProducto : new FormControl(),
+      p_Existencia : new FormControl(),
+      p_InventarioMinimo : new FormControl(),
     })
   }
 
@@ -42,7 +43,12 @@ export class InventarioComponent implements OnInit {
   }
   
   addInventario(){
-    console.log('Agregando inventario')
+    console.log('Agregando inventario',this.form.value)
     this.form.reset()  
+    this.DescripcionRef.nativeElement.value = ''
+  }
+
+  getProducto(item : Producto){
+    this.producto = item
   }
 }
