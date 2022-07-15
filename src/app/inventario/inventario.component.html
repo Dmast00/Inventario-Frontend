@@ -5,7 +5,7 @@
         <div class="containerform"> 
             <div class="formemailcontainer">
                 <div class="row">
-                  <mat-card (keyup.enter)="addInventario()">
+                  <mat-card (keyup.enter)="addInventario()" (keyup.enter)="openSnackBar()">
                     <form [formGroup]="form">
                       <mat-form-field class="productos" appearance="outline">
                         <mat-label>Productos</mat-label>
@@ -21,12 +21,12 @@
                         <mat-label>Cantidad</mat-label>
                         <input type="number" matInput formControlName="p_Existencia">
                       </mat-form-field>
-                      <mat-form-field class="cantidad" appearance="outline">
+                      <mat-form-field class="inventariominimo" appearance="outline">
                         <mat-label>Inventario Minimo</mat-label>
                         <input type="number" [(ngModel)]="InventarioMinimo" matInput formControlName="p_InventarioMinimo" >
                       </mat-form-field>
                     </form>
-                    <button class="btnadd" mat-stroked-button (click)="addInventario()">
+                    <button class="btnadd" mat-stroked-button (click)="addInventario()" (click)="openSnackBar()" >
                       Agregar 
                     </button>
                   </mat-card>

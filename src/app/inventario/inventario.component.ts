@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Inventario } from '../Models/inventario';
 import { Producto } from '../Models/producto';
@@ -21,8 +22,8 @@ export class InventarioComponent implements OnInit {
   InventarioMinimo : number | undefined
   dataSource : any = new MatTableDataSource([])
   displayedColumns : string[]= ['idInventario','fK_IdProducto','p_CostoMayoreo','p_Precio','p_Existencia','p_InventarioMinimo','fechaModificacion']
-
-  constructor(private service :BackendService) { 
+  durationInSeconds = 5;
+  constructor(private service :BackendService,private _snackBar : MatSnackBar ) { 
     this.form = new FormGroup({
       fK_IdProducto : new FormControl(),
       p_Existencia : new FormControl(),
@@ -67,5 +68,11 @@ export class InventarioComponent implements OnInit {
   getMontominimo(item : Producto){
     const inv = this.Inventario.find(x => x.fK_IdProducto == item.idProducto)
     this.InventarioMinimo = inv?.p_InventarioMinimo
+  }
+
+  openSnackBar() {
+    this._snackBar.open('Inventario Agregado','Cerrar', {
+      duration: this.durationInSeconds * 1000,
+    });
   }
 }

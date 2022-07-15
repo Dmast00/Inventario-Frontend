@@ -21,6 +21,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { ProductsNameComponent } from "./Pipes/products-name/products-name.component";
 import { CostoporMayoreoComponent } from './Pipes/costopor-mayoreo/costopor-mayoreo.component';
 import { PrecioComponent } from './Pipes/precio/precio.component';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { PrecioComponent } from './Pipes/precio/precio.component';
     MatInputModule,
     MatCardModule,
     ReactiveFormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
