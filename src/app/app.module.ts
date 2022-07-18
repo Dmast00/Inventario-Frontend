@@ -22,6 +22,7 @@ import { ProductsNameComponent } from "./Pipes/products-name/products-name.compo
 import { CostoporMayoreoComponent } from './Pipes/costopor-mayoreo/costopor-mayoreo.component';
 import { PrecioComponent } from './Pipes/precio/precio.component';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatSortModule } from "@angular/material/sort";
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     MatCardModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

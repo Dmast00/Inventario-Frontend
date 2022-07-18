@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Inventario } from '../Models/inventario';
 import { Producto } from '../Models/producto';
@@ -21,8 +23,13 @@ export class InventarioComponent implements OnInit {
   Inventario : Inventario[]
   InventarioMinimo : number | undefined
   dataSource : any = new MatTableDataSource([])
+  sort : MatSort;
   displayedColumns : string[]= ['idInventario','fK_IdProducto','p_CostoMayoreo','p_Precio','p_Existencia','p_InventarioMinimo','fechaModificacion']
   durationInSeconds = 5;
+  @ViewChild(MatSort, { static: true }) set matSort(ms : MatSort){
+    this.sort = ms;
+    this.dataSource.sort = this.sort;
+  }
   constructor(private service :BackendService,private _snackBar : MatSnackBar ) { 
     this.form = new FormGroup({
       fK_IdProducto : new FormControl(),
@@ -44,6 +51,7 @@ export class InventarioComponent implements OnInit {
   getInventario(){
     this.service.GetInventario().subscribe(data =>{
       this.dataSource = new MatTableDataSource(data)
+      this.dataSource.sort = this.sort;
       this.Inventario = data
     })
   }
