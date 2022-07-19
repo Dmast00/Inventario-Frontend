@@ -23,6 +23,7 @@ import { CostoporMayoreoComponent } from './Pipes/costopor-mayoreo/costopor-mayo
 import { PrecioComponent } from './Pipes/precio/precio.component';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatSortModule } from "@angular/material/sort";
+import { SalidasComponent } from './salidas/salidas.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { MatSortModule } from "@angular/material/sort";
     ProductsNameComponent,
     CostoporMayoreoComponent,
     PrecioComponent,
+    SalidasComponent,
 
   ],
   imports: [
