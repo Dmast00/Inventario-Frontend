@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./salidas.component.css']
 })
 export class SalidasComponent implements OnInit {
-
+  Salidas : any[] = []
   constructor() { }
 
   ngOnInit(): void {

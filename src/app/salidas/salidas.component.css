@@ -1,7 +1,12 @@
+.containersalida{
+    display: flex;
+    flex-direction: column;
+}
 .containeroptions{
     display: flex;
     flex-direction: row;
     gap: 5px;
+    margin-bottom: 10px;
 }
 button{
     width: 12rem;
@@ -10,14 +15,16 @@ button{
 }
 .total{
     display: flex;
-    width: 100%;
+    width: 85%;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-between;
     align-items: center;
-    position: absolute;
-    bottom: 15vh;
+
 }
 .inputcontainer{
-    position: absolute;
-    bottom: 8vh;
+ 
+}
+mat-card{
+    height: 65vh;
+    width: 85%;
 }
