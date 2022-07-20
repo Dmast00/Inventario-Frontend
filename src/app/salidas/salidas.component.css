@@ -22,7 +22,10 @@ button{
 
 }
 .inputcontainer{
- 
+    width: 85%;
+}
+mat-form-field{
+    width: 85%;
 }
 mat-card{
     height: 65vh;
